@@ -4,9 +4,9 @@ ubuntu="apt"
 fedora="dnf"
 arch="pacman"
 
-SXHKD_DIR=$HOME/.config/sxhkd/
-BSPWM_DIR=$HOME/.config/bspwm/
-PICOM_DIR=$HOME/.config/picom/
+SXHKD_DIR=$HOME/.config/sxhkd
+BSPWM_DIR=$HOME/.config/bspwm
+PICOM_DIR=$HOME/.config/picom
 GTK_XFCE_TERM=$HOME/.config/gtk-3.0/gtk.css
 
 # Prefixes for installing on different distros
@@ -96,3 +96,8 @@ mkdir -p $SXHKD_DIR && cp dotfiles/sxhkdrc $SXHKD_DIR/sxhkdrc
 ###########
 echo "[+] Copying sxhkdrc dotfile"
 mkdir -p $PICOM_DIR && cp dotfiles/picom.conf $PICOM_DIR
+###########
+# Rice xfce4
+###########
+echo '[+] Setting up xfce4 for bspwm'
+xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm

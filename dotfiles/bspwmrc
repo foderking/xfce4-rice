@@ -1,6 +1,6 @@
 #! /bin/sh
-xfdesktop -D &
-xfce4-panel -d &
+# xfdesktop -D &
+# xfce4-panel -d &
 #subl &
 sxhkd &
 picom -b  
