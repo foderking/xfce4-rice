@@ -92,12 +92,16 @@ mkdir -p $BSPWM_DIR && cp dotfiles/bspwmrc $BSPWM_DIR/bspwmrc
 echo "[+] Copying sxhkdrc dotfile"
 mkdir -p $SXHKD_DIR && cp dotfiles/sxhkdrc $SXHKD_DIR/sxhkdrc
 ###########
-# Rice picomc
+# Rice picom
 ###########
 echo "[+] Copying sxhkdrc dotfile"
 mkdir -p $PICOM_DIR && cp dotfiles/picom.conf $PICOM_DIR
 ###########
-# Rice xfce4
+# Add bspwm to xfce4
 ###########
 echo '[+] Setting up xfce4 for bspwm'
 xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa bspwm
+###########
+# Optimization for java apps
+###########
+echo 'export _JAVA_AWT_WM_NONREPARENTING=1' >> $HOME/.bashrc
